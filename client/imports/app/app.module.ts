@@ -7,7 +7,7 @@ import { AccountsModule } from 'angular2-meteor-accounts-ui';
 import { AppComponent } from './app.component.web';
 import { routes, ROUTES_PROVIDERS } from './app.routes';
 import { NOTES_DECLARATIONS } from './notes';
-
+import { MaterialModule } from "@angular/material";
 
 @NgModule({
   imports: [
@@ -15,7 +15,8 @@ import { NOTES_DECLARATIONS } from './notes';
     FormsModule,
     ReactiveFormsModule,
     RouterModule.forRoot(routes),
-    AccountsModule
+    AccountsModule,
+    MaterialModule.forRoot()
   ],
   declarations: [
     AppComponent,

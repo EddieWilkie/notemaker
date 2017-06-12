@@ -1,21 +1,24 @@
-<div class="row ma-note-details-container">
-  <div class="col-sm-6 col-sm-offset-3">
-    <legend>View and Edit Your Note Details:</legend>
-    <form class="form-horizontal" *ngIf="note" (submit)="saveNote()">
-      <div class="form-group">
-        <label>Title</label>
-        <input [disabled]="!isOwner" type="text" [(ngModel)]="note.title" name="title" class="form-control">
-      </div>
-
-      <div class="form-group">
-        <label>Description</label>
-        <input [disabled]="!isOwner" type="text" [(ngModel)]="note.description" name="description" class="form-control">
-      </div>
-
-      <div class="form-group">
-        <button [disabled]="!isOwner" type="submit" class="btn btn-primary">Save</button>
-        <a [routerLink]="['/']" class="btn">Back</a>
-      </div>
-    </form>
+<div class="notes-details-container" *ngIf="note">
+  <div class="row">
+    <div class="note-details">
+      <md-card>
+        <h2>{{ note.title }}</h2>
+        <form layout="column" (submit)="saveNote()">
+          <label>Title: </label>
+          <md-input [disabled]="!isOwner" [(ngModel)]="note.title" name="title"></md-input>
+          <br />
+          <label>Note Description: </label>
+          <md-input [disabled]="!isOwner" [(ngModel)]="note.description" name="description"></md-input>
+          <br />
+          <md-checkbox [disabled]="!isOwner" [(checked)]="note.public" name="public" aria-label="Public">
+            Public note?
+          </md-checkbox>
+          <div layout="row" layout-align="left">
+            <button [disabled]="!isOwner" type="submit" md-raised-button color="accent">Save</button>
+            <a [routerLink]="['/']" md-raised-button class="md-raised">Back</a>
+          </div>
+        </form>
+      </md-card>
+    </div>
   </div>
 </div>

@@ -8,9 +8,11 @@ import style from './app.component.scss';
 //Root component template.
 import template from './app.component.web.html';
 
+
 @Component({
   selector: 'app',
-  template
+  template,
+  styles: [style]
 })
 
 //Root component.

@@ -1,8 +1,18 @@
-.ma-note-details-container {
-  padding: 20px;
+.notes-details-container {
+  display: table;
 
-  .ma-map-title {
-    font-size: 16px;
-    font-weight: bolder;
+  .row {
+    display: table-row;
+    width: 100%;
+
+    .note-details {
+      display: table-cell;
+      width: 33.3%;
+      vertical-align: top;
+
+      md-card {
+        margin: 20px;
+      }
+    }
   }
 }

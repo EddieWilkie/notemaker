@@ -60,6 +60,7 @@ export class NotesDetailsComponent implements OnInit, OnDestroy, CanActivate {
         title: this.note.title,
         description: this.note.description,
         createdAt: new Date(),
+        owner: Meteor.userId(),
         'public': this.note.public
       }
     });

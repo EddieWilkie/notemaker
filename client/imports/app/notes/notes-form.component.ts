@@ -5,11 +5,13 @@ import { InjectUser } from 'angular2-meteor-accounts-ui';
 //Import collection to add new notes to db
 import { Notes } from '../../../../both/collections/notes.collection';
 
-import template from '../notes/notes-form.component.html';
+import template from './notes-form.component.html';
+import style from './notes-form.component.scss';
 //form component for adding new notes.
 @Component({
   selector: 'notes-form',
-  template
+  template,
+  styles: [style]
 })
 @InjectUser('user')
 export class NotesFormComponent {
@@ -38,16 +40,16 @@ export class NotesFormComponent {
       return;
     }
 
-
-
     if(this.addForm.valid) {
-      Notes.insert(Object.assign({},{
-        title: this.addForm.value.title,
-        description: this.addForm.value.description,
-        createdAt: new Date()
-      }, {owner: Meteor.userId()})
-    );
-    
+        Notes.insert({
+          title: this.addForm.value.title,
+          description: this.addForm.value.description,
+          createdAt: new Date(),
+          owner: Meteor.userId(),
+          public: this.addForm.value.public
+        });
+
+        this.addForm.reset();
     }
   }
 }

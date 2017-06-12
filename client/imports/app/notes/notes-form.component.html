@@ -1,18 +1,26 @@
-<form [formGroup]="addForm" (ngSubmit)="addNote()" class="form-inline">
-  <fieldset class="form-group">
-    <label for="noteName">Note title</label>
-    <input id="title" class="form-control" type="text" formControlName="title" placeholder="Title" />
-
-    <label for="description">Description</label>
-    <input id="description" class="form-control" type="text" formControlName="description" placeholder="Description">
-
-    <div class="checkbox">
-      <label>
-        <input type="checkbox" formControlName="public">
-        Public
-      </label>
+<div class="form-container">
+  <div class="container-background">
+    <div class="form-content">
+      <div class="form-center">
+        <h1>Your note is missing?</h1>
+        <h2>Add it now!</h2>
+      </div>
+      <div class="form-center">
+        <form *ngIf="user" [formGroup]="addForm" (ngSubmit)="addNote()">
+          <div style="display: table-row">
+            <div class="form-inputs">
+              <md-input dividerColor="accent" formControlName="title" placeholder="Note Title"></md-input>
+              <br/>
+              <md-input dividerColor="accent" formControlName="description" placeholder="Description"></md-input>
+              <br/>
+              <md-checkbox formControlName="public">Public note?</md-checkbox>
+              <br/><br/>
+              <button color="accent" md-raised-button type="submit">Add a Note!</button>
+            </div>
+        <div *ngIf="!user">
+          Please login in order to create new notes!
+        </div>
+      </div>
     </div>
-
-    <button type="submit" class="btn btn-primary">Add</button>
-  </fieldset>
-</form>
+  </div>
+</div>
