@@ -13,10 +13,12 @@ import style from './notes-form.component.scss';
   template,
   styles: [style]
 })
+
 @InjectUser('user')
 export class NotesFormComponent {
   addForm: FormGroup;
   user:Meteor.User;
+  showAddNote: boolean;
 //Form builder prvisdes form control methods.
   constructor(
     private formBuilder: FormBuilder
@@ -24,6 +26,7 @@ export class NotesFormComponent {
 
   //From OnItit interface.
   ngOnInit() {
+    this.showAddNote = false;
     this.addForm = this.formBuilder.group({
       title: ['', Validators.required],//Title is required
       description: ['', Validators.required],// description is required.
@@ -32,6 +35,9 @@ export class NotesFormComponent {
     });
   }
 
+  toggleAddNote(){
+    this.showAddNote = !this.showAddNote;
+  }
 
   //Add a new note to the collection.
   addNote(): void {
@@ -50,6 +56,7 @@ export class NotesFormComponent {
         });
 
         this.addForm.reset();
+        this.showAddNote = false;
     }
   }
 }

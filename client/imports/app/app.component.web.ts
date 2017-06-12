@@ -4,9 +4,12 @@ import { Observable } from 'rxjs/Observable';
 import { Notes } from '../../../both/collections/notes.collection';
 //Import common Note interface.
 import { Note } from '../../../both/models/note.model';
-import style from './app.component.scss';
-//Root component template.
 import template from './app.component.web.html';
+import style from './app.component.scss';
+import {InjectUser} from "angular2-meteor-accounts-ui";
+import { DisplayNamePipe } from './display-name.pipe';
+//Root component template.
+
 
 
 @Component({
@@ -16,4 +19,13 @@ import template from './app.component.web.html';
 })
 
 //Root component.
-export class AppComponent {}
+@InjectUser('user')
+export class AppComponent {
+  constructor() {
+
+  }
+
+  logout() {
+    Meteor.logout();
+  }
+}

@@ -8,6 +8,8 @@ import { AppComponent } from './app.component.web';
 import { routes, ROUTES_PROVIDERS } from './app.routes';
 import { NOTES_DECLARATIONS } from './notes';
 import { MaterialModule } from "@angular/material";
+import { AUTH_DECLARATIONS } from "./auth/index";
+import { DisplayNamePipe } from './display-name.pipe';
 
 @NgModule({
   imports: [
@@ -17,10 +19,13 @@ import { MaterialModule } from "@angular/material";
     RouterModule.forRoot(routes),
     AccountsModule,
     MaterialModule.forRoot()
+
   ],
   declarations: [
     AppComponent,
-    ...NOTES_DECLARATIONS
+    DisplayNamePipe,
+    ...NOTES_DECLARATIONS,
+    ...AUTH_DECLARATIONS
   ],
   providers: [
     ...ROUTES_PROVIDERS
