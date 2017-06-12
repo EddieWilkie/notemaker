@@ -1,0 +1,18 @@
+<form [formGroup]="addForm" (ngSubmit)="addNote()" class="form-inline">
+  <fieldset class="form-group">
+    <label for="noteName">Note title</label>
+    <input id="title" class="form-control" type="text" formControlName="title" placeholder="Title" />
+
+    <label for="description">Description</label>
+    <input id="description" class="form-control" type="text" formControlName="description" placeholder="Description">
+
+    <div class="checkbox">
+      <label>
+        <input type="checkbox" formControlName="public">
+        Public
+      </label>
+    </div>
+
+    <button type="submit" class="btn btn-primary">Add</button>
+  </fieldset>
+</form>
