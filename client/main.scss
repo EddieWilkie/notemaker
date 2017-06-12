@@ -7,6 +7,7 @@ $app-theme: md-light-theme($app-primary, $app-accent, $app-warn);
 @include angular-material-theme($app-theme);
 
 
+
 .fill-remaining-space {
   flex: 1 1 auto;
 }

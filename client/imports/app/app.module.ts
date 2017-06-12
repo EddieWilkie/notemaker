@@ -7,9 +7,10 @@ import { AccountsModule } from 'angular2-meteor-accounts-ui';
 import { AppComponent } from './app.component.web';
 import { routes, ROUTES_PROVIDERS } from './app.routes';
 import { NOTES_DECLARATIONS } from './notes';
-import { MaterialModule } from "@angular/material";
+import { MaterialModule, MdButtonModule, MdInputModule } from "@angular/material";
 import { AUTH_DECLARATIONS } from "./auth/index";
 import { DisplayNamePipe } from './display-name.pipe';
+
 
 @NgModule({
   imports: [
@@ -18,8 +19,9 @@ import { DisplayNamePipe } from './display-name.pipe';
     ReactiveFormsModule,
     RouterModule.forRoot(routes),
     AccountsModule,
-    MaterialModule.forRoot()
-
+    MaterialModule.forRoot(),
+    MdButtonModule,
+    MdInputModule
   ],
   declarations: [
     AppComponent,

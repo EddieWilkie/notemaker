@@ -1,5 +1,5 @@
-<div class="notes-details-container" *ngIf="note">
-  <div class="row">
+<div class="md-content" layout="row" layout-align="center start" layout-fill layout-margin>
+  <div layout="column" flex flex-md="50" flex-lg="50" flex-gt-lg="33" class="md-whiteframe-z2" layout-fill>
     <div class="note-details">
       <md-card>
         <h2>{{ note.title }}</h2>
@@ -7,12 +7,9 @@
           <label>Title: </label>
           <md-input [disabled]="!isOwner" [(ngModel)]="note.title" name="title"></md-input>
           <br />
-          <label>Note Description: </label>
+          <label>Description: </label>
           <md-input [disabled]="!isOwner" [(ngModel)]="note.description" name="description"></md-input>
           <br />
-          <md-checkbox [disabled]="!isOwner" [(checked)]="note.public" name="public" aria-label="Public">
-            Public note?
-          </md-checkbox>
           <div layout="row" layout-align="left">
             <button [disabled]="!isOwner" type="submit" md-raised-button color="accent">Save</button>
             <a [routerLink]="['/']" md-raised-button class="md-raised">Back</a>

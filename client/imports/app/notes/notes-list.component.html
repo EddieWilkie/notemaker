@@ -1,4 +1,6 @@
-<notes-form></notes-form>
+<div class="md-content" layout="row" layout-align="center start" layout-fill layout-margin>
+  <div layout="column" flex flex-md="50" flex-lg="50" flex-gt-lg="33"  layout-fill>
+
 <div class="notes-list-container">
   <div class="notes-list">
     <md-card *ngFor="let note of notes | async" class="note-card">
@@ -7,8 +9,11 @@
       </h2>
       <p>{{note.description}}</p>
       <button class="remove-note" md-icon-button *ngIf="isOwner(note)" (click)="removeNote(note)">
-        <md-icon class="md-24">X</md-icon>
+        <md-icon class="md-24"><i class="fa fa-trash" aria-hidden="true"></i></md-icon>
       </button>
     </md-card>
    </div>
 </div>
+</div>
+</div>
+<notes-form></notes-form>

@@ -26,7 +26,7 @@ export class NotesListComponent implements OnInit, OnDestroy {
 ngOnInit() {
     //Recover all noet documents in collection. Zone() methods used as wrapper
     //to connect the collection changes to our view.
-    this.notes = Notes.find({}).zone();
+    this.notes = Notes.find({}, { sort: { createdAt: -1 } }).zone();
     this.notesSub = MeteorObservable.subscribe('notes').subscribe();
   }
 
