@@ -1,4 +1,4 @@
-# notemaker
+# simple notemaker
 Simple Note Taking App
 
 Getting Started:
