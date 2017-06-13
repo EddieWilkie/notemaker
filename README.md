@@ -3,7 +3,7 @@ Simple Note Taking App
 
 __________________________________________________________
 
-To run the app:
+To run the app:\n
 Install Meteor
 clone the repository into a new directory
 Run meteor npm install
