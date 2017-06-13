@@ -1,4 +1,5 @@
 @import '../node_modules/@angular/material/core/theming/all-theme';
+@import "imports/app/mobile/ionic.scss";
 @include md-core();
 $app-primary: md-palette($md-light-blue, 500, 100, 700);
 $app-accent:  md-palette($md-pink, A200, A100, A400);
@@ -11,11 +12,21 @@ $app-theme: md-light-theme($app-primary, $app-accent, $app-warn);
 .fill-remaining-space {
   flex: 1 1 auto;
 }
+
 body {
   background-color: #f8f8f8;
   font-family: 'Muli', sans-serif;
   padding: 0;
   margin: 0;
+}
+
+body.mobile {
+  overflow: hidden;
+}
+
+body.web {
+  overflow: visible;
+  position: initial;
 }
 
 .md-whiteframe-z2 {

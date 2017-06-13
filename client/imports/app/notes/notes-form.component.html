@@ -10,7 +10,8 @@
             layout="column" layout-fill layout-padding layout-margin>
 
         <md-input formControlName="title" type="text" placeholder="Note title"></md-input>
-        <md-input formControlName="description" type="text" placeholder="Description"></md-input>
+        <md-input md-textarea formControlName="description" type="text" placeholder="Description"></md-input>
+        <md-textarea></md-textarea>
         <button color="accent" md-raised-button type="submit">Create Note</button>
       </form>
       <md-divider></md-divider>
