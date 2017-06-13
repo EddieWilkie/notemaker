@@ -15,5 +15,7 @@ Getting Started:
 
 6. Now enter the 'meteor' command to run the app.
 
-7. Sign up to start taking notes. To edit a note, simply click on the note's title. 
+7. Open a browser and got to: http://localhost:3000. Sign up to start making notes. 
+
+8. Notes can be created using the create note button on the screen and deleted by clicking the top right corner of the note. To edit a note, simply click on the note's title to open the editing view - make necessary changes, and save.
 
