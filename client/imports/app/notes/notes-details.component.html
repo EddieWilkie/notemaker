@@ -5,11 +5,11 @@
         <h2>{{ note.title }}</h2>
         <form layout="column" (submit)="saveNote()">
           <label>Title: </label>
-          <md-input [disabled]="!isOwner" [(ngModel)]="note.title" name="title"></md-input>
-          <br />
+            <md-input [disabled]="!isOwner" [(ngModel)]="note.title" name="title"></md-input>
+            <br />
           <label>Description: </label>
           <md-input-container>
-          <textarea md-input [disabled]="!isOwner" [(ngModel)]="note.description" name="description" type="text" wrap="hard" columns="1" rows="2" md-maxlength="150"></textarea>
+            <textarea md-input [disabled]="!isOwner" [(ngModel)]="note.description" name="description" type="text" wrap="hard" columns="1" rows="2" md-maxlength="150"></textarea>
           </md-input-container>
           <br />
           <div layout="row" layout-align="left">

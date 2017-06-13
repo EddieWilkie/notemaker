@@ -9,6 +9,7 @@ import template from './login.component.html';
   selector: 'login',
   template
 })
+
 export class LoginComponent implements OnInit {
   loginForm: FormGroup;
   error: string;
