@@ -1,3 +1,7 @@
+<br/>
+<div *ngIf="!user" layout="row" layout-align="center start">
+  <img  src="images/notemakerlogo.png" height="500" width="500" >
+</div>
 <div class="md-content" layout="row" layout-align="center start" layout-fill layout-margin>
   <div layout="column" flex flex-md="50" flex-lg="50" flex-gt-lg="33"  layout-fill>
 <div class="notes-list-container">
@@ -6,7 +10,7 @@
       <h2 class="note-title">
         <a [routerLink]="['/note', note._id]">{{note.title}}</a>
       </h2>
-      <p>{{note.description}}</p>
+      <pre>{{note.description}}</pre>
       <button class="remove-note" md-icon-button *ngIf="isOwner(note)" (click)="removeNote(note)">
         <md-icon class="md-24"><i class="fa fa-trash" aria-hidden="true"></i></md-icon>
       </button>

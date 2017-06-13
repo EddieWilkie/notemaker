@@ -1,5 +1,7 @@
 .notes-details-container {
   display: table;
+  flex-flow: row wrap;
+  overflow: auto;
 
   .row {
     display: table-row;

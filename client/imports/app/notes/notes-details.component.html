@@ -8,7 +8,9 @@
           <md-input [disabled]="!isOwner" [(ngModel)]="note.title" name="title"></md-input>
           <br />
           <label>Description: </label>
-          <md-input [disabled]="!isOwner" [(ngModel)]="note.description" name="description"></md-input>
+          <md-input-container>
+          <textarea md-input [disabled]="!isOwner" [(ngModel)]="note.description" name="description" type="text" wrap="hard" columns="1" rows="2" md-maxlength="150"></textarea>
+          </md-input-container>
           <br />
           <div layout="row" layout-align="left">
             <button [disabled]="!isOwner" type="submit" md-raised-button color="accent">Save</button>

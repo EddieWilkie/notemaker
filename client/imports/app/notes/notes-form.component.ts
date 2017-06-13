@@ -22,7 +22,7 @@ export class NotesFormComponent {
 //Form builder prvisdes form control methods.
   constructor(
     private formBuilder: FormBuilder
-  ) {}
+  ) {this.showAddNote = false;}
 
   //From OnItit interface.
   ngOnInit() {
@@ -35,8 +35,13 @@ export class NotesFormComponent {
     });
   }
 
+  getAddNote(): boolean {
+    return this.showAddNote;
+  }
+
   toggleAddNote(){
     this.showAddNote = !this.showAddNote;
+    console.log(this.showAddNote);
   }
 
   //Add a new note to the collection.

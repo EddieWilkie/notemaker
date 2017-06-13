@@ -35,7 +35,8 @@ export class SignupComponent implements OnInit {
             this.error = err;
           });
         } else {
-          this.router.navigate(['/']);
+          Meteor.logout();
+          this.router.navigate(['/login']);
         }
       });
     }

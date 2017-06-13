@@ -9,10 +9,11 @@
       <form  *ngIf="showAddNote" [formGroup]="addForm" #f="ngForm" (ngSubmit)="addNote()"
             layout="column" layout-fill layout-padding layout-margin>
 
-        <md-input formControlName="title" type="text" placeholder="Note title"></md-input>
-        <md-input md-textarea formControlName="description" type="text" placeholder="Description"></md-input>
-        <md-textarea></md-textarea>
-        <button color="accent" md-raised-button type="submit">Create Note</button>
+        <md-input formControlName="title" type="text" placeholder="Title"></md-input>
+          <md-input-container>
+            <textarea md-input wrap="hard"  formControlName="description" columns="40" rows="2" placeholder="Description"></textarea>
+          </md-input-container>
+          <button color="accent" md-raised-button type="submit">Create Note</button>
       </form>
       <md-divider></md-divider>
     </div>
