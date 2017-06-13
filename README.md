@@ -1,2 +1,2 @@
 # notemaker
-Simple Note Maker App
+Simple Note Taking App
