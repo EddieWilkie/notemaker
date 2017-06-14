@@ -22,7 +22,7 @@ export class NotesFormComponent {
 //Form builder prvisdes form control methods.
   constructor(
     private formBuilder: FormBuilder
-  ) {this.showAddNote = false;}
+  ) {}
 
   //From OnItit interface.
   ngOnInit() {
@@ -52,7 +52,8 @@ export class NotesFormComponent {
     }
 
     if(this.addForm.valid) {
-        Notes.insert({
+        const noteID = Notes.insert({
+          _id: Random.id(),
           title: this.addForm.value.title,
           description: this.addForm.value.description,
           createdAt: new Date(),

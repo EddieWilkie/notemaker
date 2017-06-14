@@ -4,7 +4,7 @@ import {MenuController, Platform, App} from "ionic-angular";
 import {NotesListMobileComponent} from "./notes-list.component.mobile";
 
 if (Meteor.isCordova) {
-  require("ionic-angular/css/ionic.css");
+//  require("ionic-angular/css/ionic.css");
 }
 
 @Component({
